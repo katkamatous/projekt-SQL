@@ -1,3 +1,10 @@
+SELECT current_database();
+
+SELECT table_schema, table_name
+FROM information_schema.views
+WHERE table_name = 'v_payroll_yearly';
+
+
 CREATE TABLE t_matouskova_project_SQL_primary_final AS
 SELECT
     py.year,
@@ -6,17 +13,37 @@ SELECT
     AVG(c.price) AS avg_food_price,
     MAX(CASE WHEN py.avg_salary IS NULL THEN 1 ELSE 0 END) AS salary_was_null,
     MAX(CASE WHEN c.price IS NULL THEN 1 ELSE 0 END) AS price_was_null
-FROM v_payroll_yearly as py
-JOIN czechia_payroll_industry_branch as i
+FROM data_academy_content.v_payroll_yearly AS py
+JOIN data_academy_content.czechia_payroll_industry_branch AS i
     ON py.industry_branch_code = i.code
-JOIN v_price_normalized_2 AS c
+JOIN data_academy_content.v_price_normalized AS c
     ON py.year = c.year
 GROUP BY py.year, i.name
 ORDER BY py.year, i.name;
 
+
+
 select *
 from t_matouskova_project_SQL_primary_final;
 
+
+SELECT table_schema, table_name
+FROM information_schema.views
+WHERE table_name = 'v_payroll_yearly';
+
+SELECT year, AVG(avg_salary) AS overall_avg_salary
+FROM data_academy_content.t_matouskova_project_SQL_primary_final
+GROUP BY year
+ORDER BY year;
+SELECT year, AVG(avg_food_price) AS overall_avg_food_price
+FROM data_academy_content.t_matouskova_project_SQL_primary_final
+GROUP BY year
+ORDER BY year;
+
+SELECT year, SUM(salary_was_null) AS salary_null_count, SUM(price_was_null) AS price_null_count
+FROM data_academy_content.t_matouskova_project_SQL_primary_final
+GROUP BY year
+ORDER BY year;
 
 
 

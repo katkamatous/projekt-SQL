@@ -6,10 +6,10 @@ SELECT
     AVG(c.price) AS avg_food_price,
     MAX(CASE WHEN py.avg_salary IS NULL THEN 1 ELSE 0 END) AS salary_was_null,
     MAX(CASE WHEN c.price IS NULL THEN 1 ELSE 0 END) AS price_was_null
-FROM v_payroll_yearly AS py
-JOIN czechia_payroll_industry_branch AS i
+FROM v_payroll_yearly as py
+JOIN czechia_payroll_industry_branch as i
     ON py.industry_branch_code = i.code
-JOIN v_price_normalized AS c
+JOIN v_price_normalized_2 AS c
     ON py.year = c.year
 GROUP BY py.year, i.name
 ORDER BY py.year, i.name;

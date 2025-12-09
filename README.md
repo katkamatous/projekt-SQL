@@ -15,16 +15,19 @@ Tato tabulka sjednocuje data o mzdách a cenách potravin v České republice.
 
 ### 2. Tabulka `t_katerina_matouskova_project_SQL_secondary_final`
 Tato tabulka slouží pro dodatečné srovnání s evropskými státy.
-* **Obsah:** Rok, název země, HDP, GINI koeficient a populace.
+Rok, název země, HDP, GINI koeficient a populace.
 * **Chybějící hodnoty:** Data o HDP nebo GINI koeficientu nejsou v zdrojové tabulce `economies` dostupná pro všechny země a roky. Analýza se proto zaměřuje primárně na státy, kde jsou časové řady kompletní.
 
 
+#### 1 - Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
+* **Obsah:** 
+'industry_name' - odvětví
+'year' - rok
+'avg_salary' - průměrná hrubá mzda v daném roce a odvětví
+'prev_year_salary' - průměrná hrubá mzda v předchozím roce
+'pct_change' - procentuální změna
 
-#mezivýsledky 
-## otázka č. 1 - Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
-### select - průměrná mzda dle odvětví
-### průměrná mzda dle odvětví s meziročním porovnáním 
-### na datech vidíme i klesání 
+Dle analýzy dat z tabulky mezd vyplývá, že dlouhodobý trend je ve většině odvětví rostoucí. I přesto jsme však zaznamenali roky, kdy došlo k meziročnímu poklesu mezd. Nejvýraznější poklesy byly zaznamenány v letech 2009, 2011 a 2013, nevyšší pokles nastal v peněžnictví a pojišťovnictví v roce 2013 a to o 8,91 %.
 
 
 ## otázka č. 2 - Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?

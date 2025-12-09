@@ -10,4 +10,11 @@ SELECT
         / LAG(avg_salary) OVER (PARTITION BY industry_name ORDER BY year) * 100, 2
     ) AS pct_change
 FROM t_katerina_matouskova_project_SQL_primary_final
-ORDER BY industry_name, year;
+GROUP BY 
+	industry_name, 
+	year, 
+	avg_salary
+ORDER BY 
+	industry_name,
+	year,
+	pct_change;

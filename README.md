@@ -18,6 +18,7 @@ Tato tabulka slouží pro dodatečné srovnání s evropskými státy.
 Rok, název země, HDP, GINI koeficient a populace.
 * **Chybějící hodnoty:** Data o HDP nebo GINI koeficientu nejsou v zdrojové tabulce `economies` dostupná pro všechny země a roky. Analýza se proto zaměřuje primárně na státy, kde jsou časové řady kompletní.
 
+### Otázky
 
 #### 1 - Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
 * **Obsah:** 

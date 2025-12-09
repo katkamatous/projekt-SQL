@@ -21,24 +21,37 @@ Rok, název země, HDP, GINI koeficient a populace.
 ### Otázky
 
 #### 1 - Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
-* **Obsah:** 
-'industry_name' - odvětví
-'year' - rok
-'avg_salary' - průměrná hrubá mzda v daném roce a odvětví
-'prev_year_salary' - průměrná hrubá mzda v předchozím roce
-'pct_change' - procentuální změna
+* **názvy sloupců:** 
+`industry_name` - odvětví
+`year` - rok
+`avg_salary` - průměrná hrubá mzda v daném roce a odvětví
+`prev_year_salary` - průměrná hrubá mzda v předchozím roce
+`pct_change` - procentuální změna
 
 Dle analýzy dat z tabulky mezd vyplývá, že dlouhodobý trend je ve většině odvětví rostoucí. I přesto jsme však zaznamenali roky, kdy došlo k meziročnímu poklesu mezd. Nejvýraznější poklesy byly zaznamenány v letech 2009, 2011 a 2013, nevyšší pokles nastal v peněžnictví a pojišťovnictví v roce 2013 a to o 8,91 %.
 
 
-## otázka č. 2 - Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?
-### dotaz odpovídá na počet kusů/litrů v roce 2006 a 2018
+#### 2 - Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?
+* **názvy sloupců:** 
+`year` - rok
+`category_name` - název kategorie
+`avg_wages` - průměrná hrubá měsíční mzdy v ČR za daný rok, průměr ze všech odvětví
+`avg_price` - průměrná cena sledované potraviny
+`unit_to_buy` - počet jednotek k zakoupení 
+
+Pro tuto analýzu jsme porovnávali první dostupný rok (2006) a poslední dostupný rok (2018). Výsledky ukazují nárůst kupní síly v obou kategoriích. Zatímco v roce 2006 bylo možné za průměrnou mzdu koupit přibližně 1 287 kg chleba, v roce 2018 to bylo již 1 342 kg. U mléka je trend podobný, kdy jsme zaznamenali nárůst z 1 437 litrů v roce 2006 na 1 642 litrů v roce 2018.
 
 
-## otázka č. 3 - Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)? 
-### cukr krystalový 
+#### 3 - Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)? 
+* **názvy sloupců:** 
+`category_name` - název kategorie
+`avg_yearly_growth_percent` - průměrný roční procentuální růst, tempo zdražování
 
-## otázka č. 4 - Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?
+
+Na základě průměrného meziročního procentuálního nárůstu jsme identifikovali kategorie, které zdražují nejpomaleji, nebo jejichž cena dokonce dlouhodobě klesá. Nejpomalejší tempo růstu (případně pokles) jsme zaznamenali u kategorie "Cukr krystalový" s průměrnou změnou -1,92 % ročně. Mezi další stabilní potraviny patřily například "Rajská jablka červená kulatá". Na opačném konci spektra se nachází "Papriky", které zdražovaly nejrychleji.
+
+#### 4 - Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?
+
 ### výsledek - roky, kdy rostly ceny potravin rychleji než mzdy, potraviny nerostly nikdy o více  než 10%
 
 ## otázka č. 5 - Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo následujícím roce výraznějším růstem?

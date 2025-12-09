@@ -7,7 +7,9 @@ WITH prices_per_year AS (
         category_name,
         AVG(price) AS price
     FROM t_katerina_matouskova_project_SQL_primary_final
-    GROUP BY year, category_name
+    GROUP BY 
+    	year, 
+    	category_name
 ),
 yoy_changes AS (
     SELECT 
@@ -22,7 +24,11 @@ yoy_changes AS (
 SELECT 
     category_name,
     ROUND(AVG(yoy_growth)::numeric, 2) AS avg_yearly_growth_percent
-FROM yoy_changes
-WHERE year > 2006 
-GROUP BY category_name
-ORDER BY avg_yearly_growth_percent ASC;
+FROM 
+	yoy_changes
+WHERE 
+	year > 2006 
+GROUP BY 
+	category_name
+ORDER BY 
+	avg_yearly_growth_percent ASC;

@@ -1,18 +1,24 @@
-# projekt-SQL
+##  projekt-SQL
 
-# Popis projektu
+Popis projektu
 Příprava datových pokladů pro porovnání dostupnosti potravin na základě průměrných příjmů za časové období 2006 - 2018 v ČR. 
 
-# Použité tabulky
-## t_katerina_matouskova_project_sql_primary_final
-## t_katerina_matouskova_project_sql_secondary_final
+## Popis dat a výstupních tabulek
+
+Pro účely analýzy byly z primárních zdrojů vytvořeny dvě finální tabulky, se kterými dále pracují analytické SQL skripty. Data pokrývají období let 2006 až 2018, které je společné pro mzdy i ceny potravin.
+
+### 1. Tabulka `t_katerina_matouskova_project_SQL_primary_final`
+Tato tabulka sjednocuje data o mzdách a cenách potravin v České republice.
+* **Obsah:** Rok, odvětví, průměrná mzda, kategorie potravin a jejich průměrná cena.
+* **Metodika:** Mzdy vycházejí z "přepočtených počtů" zaměstnanců. Ceny potravin jsou zprůměrovány za celou ČR pro daný rok.
+* **Chybějící hodnoty:** V některých dřívějších letech nejsou dostupná data pro všechny kategorie potravin (např. u některých druhů ovoce/zeleniny), tyto záznamy byly při agregaci vynechány, aby nedocházelo ke zkreslení.
+
+### 2. Tabulka `t_katerina_matouskova_project_SQL_secondary_final`
+Tato tabulka slouží pro dodatečné srovnání s evropskými státy.
+* **Obsah:** Rok, název země, HDP, GINI koeficient a populace.
+* **Chybějící hodnoty:** Data o HDP nebo GINI koeficientu nejsou v zdrojové tabulce `economies` dostupná pro všechny země a roky. Analýza se proto zaměřuje primárně na státy, kde jsou časové řady kompletní.
 
 
-# skripty
-## 01 - pomocné skripty k vytvoření tabulky primary final 
-## 02 - vytvoření tabulky primary final a přejmenování (v původním názvu bylo jen příjmení a chybělo křestní jméno )
-## 03 - vytvoření tabulky secondary_final a přejmenování (v původním názvu bylo jen příjmení a chybělo křestní jméno)
-## 04 - podklady k jednotlivým otázkám
 
 #mezivýsledky 
 ## otázka č. 1 - Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?

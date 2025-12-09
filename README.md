@@ -1,6 +1,5 @@
 ##  projekt-SQL
 
-Popis projektu
 Příprava datových pokladů pro porovnání dostupnosti potravin na základě průměrných příjmů za časové období 2006 - 2018 v ČR. 
 
 ## Popis dat a výstupních tabulek
@@ -64,8 +63,10 @@ Analýza meziročních změn průměrných mezd a průměrných cen potravin neu
 `gdp_growth` - růst HDP v %
 `salary_growth` - růst mezd v %
 `food_price_growth` - růst cen potravin v %
+Na základě provedené analýzy nebyla prokázána přímá závislost mezi vývojem HDP, mzdami a cenami potravin. Data ukazují, že se tyto veličiny v mnoha letech vyvíjejí nezávisle na sobě. Například nárůst HDP v roce 2007 se projevil ve mzdách v letech 2007 a 2008, ale nárůst HDP v roce 2015 se již ve mzdách projevil v mnohem menší míře. Dalším příkladem je i rok 2009, kdy HDP výrazně kleslo (-4,7 %), ale průměrné mzdy přesto vzrostly (+3 %).
 
-Z provedené analýzy vyplývá, že HDP má vliv především na mzdy, ale u cen potravin je vliv minimální. U cen potravin je vazba na HDP méně přímá. U cen potravin se přímá závislost na HDP neprokázala. Ceny potravin kolísají mnohem výrazněji a náhodněji.
+Ceny potravin vs. HDP: Ceny potravin vykazují mnohem výraznější výkyvy a jejich křivka nekopíruje vývoj HDP. Jejich změny jsou pravděpodobně ovlivněny jinými faktory (např. změny DPH, úroda, importní ceny) než jen výkonem české ekonomiky.
+
 
 
 

@@ -51,10 +51,21 @@ Pro tuto analýzu jsme porovnávali první dostupný rok (2006) a poslední dost
 Na základě průměrného meziročního procentuálního nárůstu jsme identifikovali kategorie, které zdražují nejpomaleji, nebo jejichž cena dokonce dlouhodobě klesá. Nejpomalejší tempo růstu (případně pokles) jsme zaznamenali u kategorie "Cukr krystalový" s průměrnou změnou -1,92 % ročně. Mezi další stabilní potraviny patřily například "Rajská jablka červená kulatá". Na opačném konci spektra se nachází "Papriky", které zdražovaly nejrychleji.
 
 #### 4 - Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?
+* **názvy sloupců:** 
+`year` - rok
+`wage_growth_percent` - růst mezd v %
+`price_growth_perc` - růst cen potravin v %
+`growth_difference_points` - rozdíl v procentních bodech
 
-### výsledek - roky, kdy rostly ceny potravin rychleji než mzdy, potraviny nerostly nikdy o více  než 10%
+Analýza meziročních změn průměrných mezd a průměrných cen potravin neukázala žádný rok, ve kterém by nárůst cen potravin přesáhl růst mezd o více než stanovených 10 %. Nejvýraznější rozdíl byl zaznamenán v roce 2013, kdy ceny potravin vzrostly o 5,55 % %, zatímco mzdy klesaly o 1,56 %. Výsledný rozdíl v tomto roce činil 7,11 procentních bodů, což však stále nedosahuje hranice definované ve výzkumné otázce.
 
-## otázka č. 5 - Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo následujícím roce výraznějším růstem?
-### výše HDP, meziroční nárůst HPD, platů, ceny potravin, porovnání meziroční růst HDP - meziroční růst mezd, HDP - potraviny, potraviny - mzdy
+#### 5 - Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo následujícím roce výraznějším růstem?
+* **názvy sloupců:** 
+`gdp_growth` - růst HDP v %
+`salary_growth` - růst mezd v %
+`food_price_growth` - růst cen potravin v %
+
+Z provedené analýzy vyplývá, že HDP má vliv především na mzdy, ale u cen potravin je vliv minimální. U cen potravin je vazba na HDP méně přímá. U cen potravin se přímá závislost na HDP neprokázala. Ceny potravin kolísají mnohem výrazněji a náhodněji.
+
 
 

@@ -1,21 +1,47 @@
-
 CREATE TABLE t_katerina_matouskova_project_SQL_primary_final AS
+WITH payroll_data AS (
+    SELECT
+        payroll_year,
+        industry_branch_code,
+        AVG(value) AS avg_salary
+    FROM czechia_payroll
+    WHERE value_type_code = 5958    
+      AND calculation_code = 200      -- Přepočtené počty
+      AND industry_branch_code IS NOT NULL
+    GROUP BY payroll_year, industry_branch_code
+),
+price_data AS (
+    SELECT
+        EXTRACT(YEAR FROM date_from) AS year,
+        category_code,
+        AVG(value) AS avg_price
+    FROM czechia_price
+    GROUP BY EXTRACT(YEAR FROM date_from), category_code
+)
 SELECT
-    py.year,
-    i.name AS industry_name,
-    py.avg_salary,
+    pd.payroll_year AS year,
+    ib.name AS industry_name,
+    pd.avg_salary,
     cpc.name AS category_name,
-    c.price
-FROM data_academy_content.v_payroll_yearly AS py
-JOIN data_academy_content.czechia_payroll_industry_branch AS i
-    ON py.industry_branch_code = i.code
-JOIN data_academy_content.v_price_normalized AS c
-    ON py.year = c.year
-JOIN data_academy_content.czechia_price_category AS cpc
-    ON c.category_code = cpc.code;
+    pr.avg_price AS price
+FROM payroll_data pd
+JOIN czechia_payroll_industry_branch ib
+    ON pd.industry_branch_code = ib.code
+JOIN price_data pr
+    ON pd.payroll_year = pr.year
+JOIN czechia_price_category cpc
+    ON pr.category_code = cpc.code;
 
-select *
-from t_katerina_matouskova_project_sql_primary_final as tkmpspf ;
+
+
+SELECT *
+FROM t_katerina_matouskova_project_sql_primary_final as tkmpspf 
+ORDER by YEAR;
+
+
+
+
+
 
 
 

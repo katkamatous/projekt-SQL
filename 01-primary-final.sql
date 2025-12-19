@@ -6,7 +6,7 @@ WITH payroll_data AS (
         AVG(value) AS avg_salary
     FROM czechia_payroll
     WHERE value_type_code = 5958    
-      AND calculation_code = 200      -- Přepočtené počty
+      AND calculation_code = 200   
       AND industry_branch_code IS NOT NULL
     GROUP BY payroll_year, industry_branch_code
 ),

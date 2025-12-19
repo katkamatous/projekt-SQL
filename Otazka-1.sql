@@ -10,7 +10,7 @@ SELECT
         (
             (avg_salary - LAG(avg_salary) OVER (PARTITION BY industry_name ORDER BY year)) 
             / LAG(avg_salary) OVER (PARTITION BY industry_name ORDER BY year) * 100
-        )::numeric, 2  -- PŘIDÁNO ::numeric (Teď už to ladí s otázkami 2, 3, 4, 5)
+        )::numeric, 2
     ) AS pct_change
 FROM t_katerina_matouskova_project_SQL_primary_final
 ORDER BY 
